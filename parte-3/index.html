@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Vue JS</title>
+    <script src="vue.js"></script>
+    <style>
+        nav, aside, main, section {
+            border: 1px dotted red;
+            padding: 1vw;
+            margin-top: 4vh;
+        }
+
+        aside {
+            float: left;
+            width: 30vw;
+            transition: transform .3s;
+        }
+
+        .open > aside {
+            transform: translate(-33vw, 0);
+        }
+
+        main {
+            margin-left: 33vw;
+            transition: margin-left .3s;
+        }
+
+        .open > main {
+            margin-left: 0;
+        }
+    </style>
+</head>
+<body>
+
+<div id="app" :class="{'open': open}">
+    <my-nav @toggle="update"></my-nav>
+    <my-aside></my-aside>
+    <my-main></my-main>
+</div>
+
+<script type="text/javascript">
+
+    Vue.component('my-nav', {
+        template: `<nav> <button @click="$emit('toggle')">#</button> {{ title }} </nav>`,
+        data: () => ({
+            title: 'My Pretty Nav'
+        })
+    })
+
+    Vue.component('my-main', {
+        template: `<main> My Main <my-section></my-section> </main>`
+    })
+
+    Vue.component('my-aside', {
+        template: `<aside v-html="title"></aside>`,
+        data: () => ({
+            title: 'My <b>Beauty</b> Aside'
+        })
+    })
+
+    Vue.component('my-section', {
+        template: `<section :style="style"> My Section </section>`,
+        data: () => ({
+            style: {
+                background: 'yellow'
+            }
+        })
+    })
+
+    new Vue({
+        el: '#app',
+        data: {
+            message: 'phpzm.rocks',
+            open: false
+        },
+        methods: {
+            update() {
+                this.open = !this.open
+            }
+        }
+    })
+</script>
+</body>
+</html>

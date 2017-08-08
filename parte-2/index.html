@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Vue JS</title>
+    <script src="vue.js"></script>
+    <style>
+        #app {
+            position: relative;
+        }
+        nav, aside, main, section {
+            border: 1px dotted red;
+            padding: 1vw;
+            margin-top: 4vh;
+        }
+        aside {
+            float: left;
+            width: 30vw;
+        }
+        main {
+            margin-left: 33vw;
+        }
+    </style>
+</head>
+<body>
+
+<div id="app">
+    <my-nav></my-nav>
+    <my-aside></my-aside>
+    <my-main></my-main>
+</div>
+
+<script type="text/javascript">
+
+    Vue.component('my-nav', {
+        template: `<nav> My Nav </nav>`
+    })
+
+    Vue.component('my-main', {
+        template: `<main> My Main <my-section></my-section> </main>`
+    })
+
+    Vue.component('my-aside', {
+        template: `<aside> My Aside </aside>`
+    })
+
+    Vue.component('my-section', {
+        template: `<section> My Section </section>`
+    })
+
+    new Vue({
+        el: '#app',
+        data: {
+            message: 'phpzm.rocks'
+        }
+    })
+</script>
+</body>
+</html>
