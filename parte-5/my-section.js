@@ -1,13 +1,20 @@
 
 Vue.component('my-section', {
     template: `<section :style="style">
-                    <div class="fill">
-                        <input type="text" @input="$emit('input', $event.target.value)">
+                    <div class="fill"> 
+                        My Section
+                        <input type="text" v-model="model"> 
                     </div>
                 </section>`,
     data: () => ({
         style: {
             background: 'yellow'
+        },
+        model: ''
+    }),
+    watch: {
+        model () {
+            this.$emit('input', this.model)
         }
-    })
+    }
 })

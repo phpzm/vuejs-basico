@@ -4,22 +4,22 @@
     <meta charset="UTF-8">
     <title>Vue JS</title>
     <script src="vue.js"></script>
-    <link href="style.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
 <div id="app" :class="{'open': open}">
-    <my-nav @toggle="update" :message="reverse"></my-nav>
-    <my-aside></my-aside>
+    <my-nav @toggle="update" :message="message"></my-nav>
+    <my-aside :message="message"></my-aside>
     <my-main v-model="message"></my-main>
 </div>
 
-<script type="text/javascript" src="my-nav.js"></script>
-<script type="text/javascript" src="my-aside.js"></script>
-<script type="text/javascript" src="my-main.js"></script>
 <script type="text/javascript" src="my-section.js"></script>
+<script type="text/javascript" src="my-nav.js"></script>
+<script type="text/javascript" src="my-main.js"></script>
+<script type="text/javascript" src="my-aside.js"></script>
 
-<!-- start Vue instance -->
+<!-- instance Vue -->
 <script type="text/javascript" src="my-app.js"></script>
 </body>
 </html>

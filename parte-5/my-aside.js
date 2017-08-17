@@ -1,7 +1,5 @@
 
 Vue.component('my-aside', {
-    template: `<aside v-html="title"></aside>`,
-    data: () => ({
-        title: 'My <b>Beauty</b> Aside'
-    })
+    props: ['message'],
+    template: `<aside v-html="message"></aside>`
 })

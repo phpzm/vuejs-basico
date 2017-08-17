@@ -2,13 +2,8 @@
 new Vue({
     el: '#app',
     data: {
-        message: 'phpzm.rocks',
+        message: '',
         open: false
-    },
-    computed: {
-        reverse () {
-            return this.message.split('').reverse().join('')
-        }
     },
     methods: {
         update() {
