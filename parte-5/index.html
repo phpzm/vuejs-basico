@@ -9,15 +9,17 @@
 <body>
 
 <div id="app" :class="{'open': open}">
-    <my-nav @toggle="update" :message="message"></my-nav>
+    <my-nav @toggle="update" :message="reverse"></my-nav>
     <my-aside></my-aside>
-    <my-main></my-main>
+    <my-main v-model="message"></my-main>
 </div>
 
 <script type="text/javascript" src="my-nav.js"></script>
 <script type="text/javascript" src="my-aside.js"></script>
 <script type="text/javascript" src="my-main.js"></script>
 <script type="text/javascript" src="my-section.js"></script>
+
+<!-- start Vue instance -->
 <script type="text/javascript" src="my-app.js"></script>
 </body>
 </html>
