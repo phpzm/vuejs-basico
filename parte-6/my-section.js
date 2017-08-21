@@ -1,8 +1,6 @@
 
 Vue.component('my-section', {
-    mixins: [
-        mixin
-    ],
+    mixins: [ Mixin ],
     template: `<section :style="style">
                     <div class="fill"> 
                         My Section
